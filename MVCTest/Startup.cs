@@ -23,6 +23,7 @@ namespace MVCTest
         {
             
             services.AddMvc();
+            services.AddDistributedMemoryCache();
             services.AddSession();
         }
 
@@ -40,6 +41,7 @@ namespace MVCTest
 
             app.UseStaticFiles();
 
+            app.UseDirectoryBrowser();
             app.UseSession();
 
             app.UseMvc(routes =>
